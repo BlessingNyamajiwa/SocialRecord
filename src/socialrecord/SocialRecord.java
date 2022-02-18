@@ -12,7 +12,7 @@ public class SocialRecord extends Application
     @Override
     public void start(Stage stage) throws Exception 
     {
-        Parent root = FXMLLoader.load(getClass().getResource("design/SocialRecord.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../design/SocialRecord.fxml"));
         
         Scene scene = new Scene(root);
         

@@ -1,4 +1,4 @@
-package socialrecord.logic;
+package socialrecord;
 
 import java.net.URL;
 import java.util.ResourceBundle;
