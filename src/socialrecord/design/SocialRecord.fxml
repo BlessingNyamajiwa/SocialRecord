@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" spacing="10.0" stylesheets="@css/login.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="socialrecord.design.SocialRecordController">
+   <children>
+      <Label text="User Login" underline="true">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <Label text="Username">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUsername" alignment="CENTER" onAction="#limitInput" prefHeight="35.0" prefWidth="200.0" promptText="Username" styleClass="field" stylesheets="@css/login.css">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Label layoutX="10.0" layoutY="27.0" text="Password">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="pwdPassword" alignment="CENTER" onAction="#limitInput" prefHeight="35.0" prefWidth="200.0" promptText="Password" styleClass="field" stylesheets="@css/login.css">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </PasswordField>
+      <HBox alignment="CENTER" prefHeight="91.0" prefWidth="480.0" spacing="20.0">
+         <children>
+            <Button fx:id="btnSignin" mnemonicParsing="false" onAction="#signIn" prefHeight="45.0" prefWidth="210.0" text="Login" />
+            <Button fx:id="btnForgot" mnemonicParsing="false" onAction="#forgotPassword" prefHeight="45.0" prefWidth="210.0" text="Forgot Password?" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets left="20.0" right="20.0" />
+   </padding>
+</VBox>
