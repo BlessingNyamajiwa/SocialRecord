@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class DBConnection 
 {
     private static Connection conn;
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/parish_register";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/social_record";
 //    private  final String DB_USER = "root";
 //    private  final String DB_PASS = "";
 //    Above two can not be referenced from a static context

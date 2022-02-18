@@ -19,6 +19,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import socialrecord.DBConnection;
+import static socialrecord.GenericMethods.errorBox;
 import static socialrecord.GenericMethods.warningBox;
 
 /**
@@ -82,7 +83,7 @@ public class SocialRecordController implements Initializable {
                 {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("design/Dashboard.fxml"));
                     root = loader.load();
-        
+
                     // LoginController loginController = loader.getController();
                     stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
@@ -91,6 +92,11 @@ public class SocialRecordController implements Initializable {
                     stage.show();
                     stage.centerOnScreen();
                 }
+                else
+                {
+                    errorBox("ERROR", "Login Failure", "User not found. Please verify your login credentials.");
+                }
+                conn.close();
             }
             catch(SQLException e)
             {

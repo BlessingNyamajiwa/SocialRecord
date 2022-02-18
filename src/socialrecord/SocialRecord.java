@@ -9,11 +9,10 @@ import javafx.stage.Stage;
 
 public class SocialRecord extends Application 
 {
-    
     @Override
     public void start(Stage stage) throws Exception 
     {
-        Parent root = FXMLLoader.load(getClass().getResource(""));
+        Parent root = FXMLLoader.load(getClass().getResource("design/SocialRecord.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -23,10 +22,8 @@ public class SocialRecord extends Application
         stage.setResizable(false);
     }
 
-    
     public static void main(String[] args) 
     {
         launch(args);
-    }
-    
+    }   
 }

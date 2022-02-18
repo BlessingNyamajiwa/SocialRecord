@@ -1,4 +1,18 @@
 .root
 {
-    -fx-backgroud-color: dodgerblue;
+    -fx-background-color: dodgerblue;
+}
+
+.button:hover, .button:selected
+{
+    -fx-background-color: #ffffff;
+    /*-fx-font-size: 22px;*/
+    -fx-text-fill: dodgerblue;
+}
+
+.button
+{
+    -fx-background-color: #000000;
+    /*-fx-font-size: 18px;*/
+    -fx-text-fill: #ffffff;
 }
