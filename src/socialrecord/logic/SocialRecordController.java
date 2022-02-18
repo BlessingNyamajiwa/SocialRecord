@@ -1,6 +1,7 @@
 package socialrecord.logic;
 
 import java.io.IOException;
+import static java.lang.System.out;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -81,7 +82,9 @@ public class SocialRecordController implements Initializable {
                 
                 if(rs.next())
                 {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("design/Dashboard.fxml"));
+                    URL fxmlLocation = getClass().getResource("../design/Dashboard.fxml");
+                    out.println(fxmlLocation);
+                    FXMLLoader loader = new FXMLLoader(fxmlLocation);
                     root = loader.load();
 
                     // LoginController loginController = loader.getController();
