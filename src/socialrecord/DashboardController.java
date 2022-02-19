@@ -1,5 +1,7 @@
 package socialrecord;
 
+import java.io.IOException;
+import static java.lang.System.out;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +10,13 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -17,6 +24,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import static socialrecord.GenericMethods.infoBox;
 
 /**
  * FXML Controller class
@@ -34,8 +43,6 @@ public class DashboardController implements Initializable
     private TableView<QuickSearch> tblQuickSearch;
     @FXML
     private Button btnAddNew;
-    @FXML
-    private Button btnViewQuickSearch;
     @FXML
     private Button btnEditRecord;
     @FXML
@@ -58,17 +65,32 @@ public class DashboardController implements Initializable
     private TableColumn<QuickSearch, Integer> colID;
     @FXML
     private TableColumn<QuickSearch, String> colFullName;
+    @FXML
+    private Button btnViewStudent;
+    
+    private Parent root;
+    private Stage stage;
+    private Scene scene;
+    @FXML
+    private Button btnClear;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        // TODO
+//        loadTableData();
+    }
+    
+    private void search(String item)
+    {
+        String custQuery = "";
     }
 
-    private void loadTableData(String query)
+    private void loadTableData()
     {
+        String query = "SELECT full_name, last_name FROM student AS fullname";
+        out.println(query);
         Connection conn = DBConnection.getConnection();
         ObservableList<QuickSearch> list = FXCollections.observableArrayList();
         
@@ -82,7 +104,7 @@ public class DashboardController implements Initializable
             
             while(rs.next())
             {
-                list.add(new QuickSearch(rs.getInt("id"), rs.getString("fullName")));
+                list.add(new QuickSearch(rs.getInt("id"), rs.getString("fullname")));
             }
             
             tblQuickSearch.setItems(list);
@@ -92,5 +114,79 @@ public class DashboardController implements Initializable
         {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    private void filterTable(ActionEvent event) 
+    {
+        
+    }
+
+    @FXML
+    private void addRecord(ActionEvent event) 
+    {
+        
+    }
+
+    @FXML
+    private void viewStudent(ActionEvent event) 
+    {
+        
+    }
+
+    @FXML
+    private void editRecord(ActionEvent event) 
+    {
+        
+    }
+
+    @FXML
+    private void viewAttendance(ActionEvent event) 
+    {
+        
+    }
+
+    @FXML
+    private void deleteRecord(ActionEvent event) 
+    {
+        
+    }
+
+    @FXML
+    private void viewReports(ActionEvent event) 
+    {
+        
+    }
+
+    @FXML
+    private void logout(ActionEvent event) throws IOException
+    {
+        infoBox("INFORMATION","Logging out...","You're being signed out of your account.");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("design/SocialRecord.fxml"));
+        root = loader.load();
+        
+        // LoginController loginController = loader.getController();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setTitle("Social Record | Login");
+        stage.setScene(scene);
+        stage.show();
+        stage.centerOnScreen();
+    }
+
+    @FXML
+    private void activityLog(ActionEvent event) {
+    }
+
+    @FXML
+    private void settings(ActionEvent event) 
+    {
+        
+    }
+
+    @FXML
+    private void clearText(ActionEvent event) 
+    {
+        txtSearch.setText("");
     }
 }
