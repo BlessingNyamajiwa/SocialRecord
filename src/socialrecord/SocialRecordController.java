@@ -4,6 +4,7 @@ import java.io.IOException;
 import static java.lang.System.out;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,8 +20,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import socialrecord.DBConnection;
 import static socialrecord.GenericMethods.errorBox;
+import static socialrecord.GenericMethods.infoBox;
 import static socialrecord.GenericMethods.warningBox;
 
 /**
@@ -42,6 +43,9 @@ public class SocialRecordController implements Initializable {
     private Parent root;
     private Scene scene;
     private Stage stage;
+    
+    private static Connection conn;
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/social_record";
 
     /**
      * Initializes the controller class.
@@ -49,8 +53,38 @@ public class SocialRecordController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        // TODO
-    }    
+        boolean status = createConnection();
+        if(status)
+        {
+            infoBox("INFORMATION", "Connection Status","Database connection created successfully");
+        }
+        else
+        {
+            errorBox("ERROR","Database Connection Failed","Failed to create database connection");
+            System.exit(0);
+        }
+    }
+
+    public boolean createConnection()
+    {
+        try
+        {
+            conn = DriverManager.getConnection(DB_URL, "root", "");
+            
+            if(conn != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch(SQLException e)
+        {
+            return false;
+        }
+    }
 
     @FXML
     private void limitInput(ActionEvent event) 
