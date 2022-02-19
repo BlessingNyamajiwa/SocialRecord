@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.42105263157894735" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" styleClass="root" stylesheets="@css/dashboard.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.42105263157894735" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" styleClass="root" stylesheets="@css/dashboard.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="socialrecord.DashboardController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
@@ -31,14 +31,14 @@
                      <font>
                         <Font size="18.0" />
                      </font></TextField>
-                  <Button fx:id="btnSearch" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" text="Search">
+                  <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#filterTable" prefHeight="40.0" prefWidth="150.0" text="Search">
                      <font>
                         <Font size="18.0" />
                      </font></Button>
                   <TableView fx:id="tblQuickSearch" prefHeight="303.0" prefWidth="323.0">
                     <columns>
-                      <TableColumn prefWidth="54.0" text="ID" />
-                      <TableColumn prefWidth="268.0" text="Student Name" />
+                      <TableColumn fx:id="colID" prefWidth="54.0" text="ID" />
+                      <TableColumn fx:id="colFullName" prefWidth="268.0" text="Student Name" />
                     </columns>
                   </TableView>
                </children>
@@ -60,27 +60,27 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="btnAddNew" mnemonicParsing="false" prefHeight="102.0" prefWidth="230.0" stylesheets="@css/dashboard.css" text="Add New Record">
+                  <Button fx:id="btnAddNew" mnemonicParsing="false" onAction="#addRecord" prefHeight="102.0" prefWidth="230.0" stylesheets="@css/dashboard.css" text="Add New Record">
                      <font>
                         <Font size="16.0" />
                      </font></Button>
-                  <Button fx:id="btnViewStudent" mnemonicParsing="false" prefHeight="103.0" prefWidth="225.0" stylesheets="@css/dashboard.css" text="View Student" GridPane.columnIndex="1">
+                  <Button fx:id="btnViewStudent" mnemonicParsing="false" onAction="#viewStudent" prefHeight="103.0" prefWidth="225.0" stylesheets="@css/dashboard.css" text="View Student" GridPane.columnIndex="1">
                      <font>
                         <Font size="16.0" />
                      </font></Button>
-                  <Button fx:id="btnEditRecord" mnemonicParsing="false" prefHeight="103.0" prefWidth="229.0" stylesheets="@css/dashboard.css" text="Edit Record" GridPane.rowIndex="1">
+                  <Button fx:id="btnEditRecord" mnemonicParsing="false" onAction="#editRecord" prefHeight="103.0" prefWidth="229.0" stylesheets="@css/dashboard.css" text="Edit Record" GridPane.rowIndex="1">
                      <font>
                         <Font size="16.0" />
                      </font></Button>
-                  <Button fx:id="btnAttendance" mnemonicParsing="false" prefHeight="102.0" prefWidth="229.0" stylesheets="@css/dashboard.css" text="Attendance Pattern" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button fx:id="btnAttendance" mnemonicParsing="false" onAction="#viewAttendance" prefHeight="102.0" prefWidth="229.0" stylesheets="@css/dashboard.css" text="Attendance Pattern" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="16.0" />
                      </font></Button>
-                  <Button fx:id="deleteRecord" mnemonicParsing="false" prefHeight="104.0" prefWidth="230.0" stylesheets="@css/dashboard.css" text="Delete Record" GridPane.rowIndex="2">
+                  <Button fx:id="deleteRecord" mnemonicParsing="false" onAction="#deleteRecord" prefHeight="104.0" prefWidth="230.0" stylesheets="@css/dashboard.css" text="Delete Record" GridPane.rowIndex="2">
                      <font>
                         <Font size="16.0" />
                      </font></Button>
-                  <Button fx:id="viewReport" mnemonicParsing="false" prefHeight="101.0" prefWidth="226.0" stylesheets="@css/dashboard.css" text="View Reports" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Button fx:id="viewReport" mnemonicParsing="false" onAction="#viewReports" prefHeight="101.0" prefWidth="226.0" stylesheets="@css/dashboard.css" text="View Reports" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
                         <Font size="16.0" />
                      </font></Button>
@@ -96,9 +96,9 @@
             </ImageView>
             <HBox alignment="CENTER" layoutX="14.0" layoutY="338.0" prefHeight="45.0" prefWidth="214.0" spacing="10.0">
                <children>
-                  <Button fx:id="btnLogout" mnemonicParsing="false" stylesheets="@css/dashboard.css" text="Logout" />
-                  <Button fx:id="btnActivityLog" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" stylesheets="@css/dashboard.css" text="Activity Log" />
-                  <Button fx:id="btnSettings" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" stylesheets="@css/dashboard.css" text="Settings" />
+                  <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logout" stylesheets="@css/dashboard.css" text="Logout" />
+                  <Button fx:id="btnActivityLog" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#activityLog" stylesheets="@css/dashboard.css" text="Activity Log" />
+                  <Button fx:id="btnSettings" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#settings" stylesheets="@css/dashboard.css" text="Settings" />
                </children>
             </HBox>
             <Label layoutX="57.0" layoutY="389.0" text="Logged in as:" textFill="WHITE">

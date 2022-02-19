@@ -82,7 +82,7 @@ public class SocialRecordController implements Initializable {
                 
                 if(rs.next())
                 {
-                    URL fxmlLocation = getClass().getResource("../Dashboard.fxml");
+                    URL fxmlLocation = getClass().getResource("design/Dashboard.fxml");
                     out.println(fxmlLocation);
                     FXMLLoader loader = new FXMLLoader(fxmlLocation);
                     root = loader.load();
