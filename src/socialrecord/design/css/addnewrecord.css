@@ -1,0 +1,28 @@
+.root
+{
+    -fx-background-color: dodgerblue;
+}
+
+.button
+{
+    -fx-background-color: #000000;
+    -fx-font-size: 14px;
+    -fx-text-fill: #ffffff;
+}
+
+.button:hover
+{
+    -fx-background-color: #ffffff;
+    -fx-font-size: 14px;
+    -fx-text-fill: #000000;
+}
+
+.input-field
+{
+    -fx-background-color: #ffffff;
+}
+
+/*#btnSave
+{
+    -fx-background-color: green;
+}*/

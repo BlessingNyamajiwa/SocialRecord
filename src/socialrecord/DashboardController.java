@@ -123,9 +123,18 @@ public class DashboardController implements Initializable
     }
 
     @FXML
-    private void addRecord(ActionEvent event) 
+    private void addRecord(ActionEvent event) throws IOException
     {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("design/AddNewRecord.fxml"));
         
+        root = loader.load();
+        
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setTitle("Social Record | Add New Record");
+        stage.setScene(scene);
+        stage.show();
+        stage.centerOnScreen();
     }
 
     @FXML
@@ -161,7 +170,7 @@ public class DashboardController implements Initializable
     @FXML
     private void logout(ActionEvent event) throws IOException
     {
-        infoBox("INFORMATION","Logging out...","You're being signed out of your account.");
+//        infoBox("INFORMATION","Logging out...","You're being signed out of your account.");
         FXMLLoader loader = new FXMLLoader(getClass().getResource("design/SocialRecord.fxml"));
         root = loader.load();
         
