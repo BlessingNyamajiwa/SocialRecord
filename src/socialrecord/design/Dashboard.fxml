@@ -74,7 +74,7 @@
                      <font>
                         <Font size="16.0" />
                      </font></Button>
-                  <Button fx:id="btnViewStudent" mnemonicParsing="false" onAction="#viewStudent" prefHeight="103.0" prefWidth="225.0" stylesheets="@css/dashboard.css" text="View Student" GridPane.columnIndex="1">
+                  <Button fx:id="btnViewStudent" mnemonicParsing="false" onAction="#viewStudents" prefHeight="103.0" prefWidth="225.0" stylesheets="@css/dashboard.css" text="View Students" GridPane.columnIndex="1">
                      <font>
                         <Font size="16.0" />
                      </font></Button>

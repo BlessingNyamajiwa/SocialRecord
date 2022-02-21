@@ -82,6 +82,11 @@ public class DashboardController implements Initializable
 //        loadTableData();
     }
     
+    private void loadActiveUser()
+    {
+        // Loads active user's name and displays it in the username label
+    }
+    
     private void search(String item)
     {
         String custQuery = "";
@@ -125,10 +130,14 @@ public class DashboardController implements Initializable
     @FXML
     private void addRecord(ActionEvent event) throws IOException
     {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("design/AddNewRecord.fxml"));
-        
+        URL fxmlLocation = getClass().getResource("design/AddNewRecord.fxml");
+        out.println(fxmlLocation);
+        FXMLLoader loader = new FXMLLoader(fxmlLocation);
+//        infoBox("INFORMATION","Logging out...","You're being signed out of your account.");
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("design/SocialRecord.fxml"));
         root = loader.load();
         
+        // LoginController loginController = loader.getController();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setTitle("Social Record | Add New Record");
@@ -137,11 +146,6 @@ public class DashboardController implements Initializable
         stage.centerOnScreen();
     }
 
-    @FXML
-    private void viewStudent(ActionEvent event) 
-    {
-        
-    }
 
     @FXML
     private void editRecord(ActionEvent event) 
@@ -170,8 +174,12 @@ public class DashboardController implements Initializable
     @FXML
     private void logout(ActionEvent event) throws IOException
     {
+
+        URL fxmlLocation = getClass().getResource("design/SocialRecord.fxml");
+        out.println(fxmlLocation);
+        FXMLLoader loader = new FXMLLoader(fxmlLocation);
 //        infoBox("INFORMATION","Logging out...","You're being signed out of your account.");
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("design/SocialRecord.fxml"));
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("design/SocialRecord.fxml"));
         root = loader.load();
         
         // LoginController loginController = loader.getController();
@@ -197,5 +205,9 @@ public class DashboardController implements Initializable
     private void clearText(ActionEvent event) 
     {
         txtSearch.setText("");
+    }
+
+    @FXML
+    private void viewStudents(ActionEvent event) {
     }
 }

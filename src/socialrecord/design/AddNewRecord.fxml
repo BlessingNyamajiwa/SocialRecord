@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" styleClass="root" stylesheets="@css/addnewrecord.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" styleClass="root" stylesheets="@css/addnewrecord.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="socialrecord.AddNewRecordController">
    <children>
       <Label text="Enter student details:" textFill="WHITE">
          <font>
@@ -18,57 +17,57 @@
          </font>
       </Label>
       <Label text="First Name(s):" textFill="WHITE" />
-      <TextField promptText="First Name(s)" styleClass="input-field" stylesheets="@css/addnewrecord.css">
+      <TextField fx:id="txtFirstName" promptText="First Name(s)" styleClass="input-field" stylesheets="@css/addnewrecord.css">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
       <Label layoutX="10.0" layoutY="27.0" text="Last Name:" textFill="WHITE" />
-      <TextField layoutX="10.0" layoutY="44.0" promptText="Last Name" styleClass="input-field" stylesheets="@css/addnewrecord.css">
+      <TextField fx:id="txtLastName" layoutX="10.0" layoutY="44.0" promptText="Last Name" styleClass="input-field" stylesheets="@css/addnewrecord.css">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
       <Label layoutX="10.0" layoutY="69.0" text="Date of Birth:" textFill="WHITE" />
-      <DatePicker promptText="Date of Birth" />
+      <DatePicker fx:id="dtpBirth" promptText="Date of Birth" />
       <Label layoutX="10.0" layoutY="69.0" text="Home Address:" textFill="WHITE" />
-      <TextField layoutX="10.0" layoutY="86.0" promptText="Home Address" styleClass="input-field" stylesheets="@css/addnewrecord.css">
+      <TextField fx:id="txtHomeAddress" layoutX="10.0" layoutY="86.0" promptText="Home Address" styleClass="input-field" stylesheets="@css/addnewrecord.css">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
       <Label layoutX="10.0" layoutY="153.0" text="Known Conditions:" textFill="WHITE" />
-      <TextField layoutX="10.0" layoutY="170.0" promptText="Health Problems" styleClass="input-field" stylesheets="@css/addnewrecord.css">
+      <TextField fx:id="txtKnownConditions" layoutX="10.0" layoutY="170.0" promptText="Health Problems" styleClass="input-field" stylesheets="@css/addnewrecord.css">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
       <Label layoutX="10.0" layoutY="195.0" text="Position In Family:" textFill="WHITE" />
-      <TextField layoutX="10.0" layoutY="212.0" promptText="Pos. In Family" styleClass="input-field" stylesheets="@css/addnewrecord.css">
+      <TextField fx:id="txtPosFamily" layoutX="10.0" layoutY="212.0" promptText="Pos. In Family" styleClass="input-field" stylesheets="@css/addnewrecord.css">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
       <Label layoutX="10.0" layoutY="237.0" text="No. of Children:" textFill="WHITE" />
-      <TextField layoutX="10.0" layoutY="254.0" promptText="No. of Children" styleClass="input-field" stylesheets="@css/addnewrecord.css">
+      <TextField fx:id="txtNoChildren" layoutX="10.0" layoutY="254.0" promptText="No. of Children" styleClass="input-field" stylesheets="@css/addnewrecord.css">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
       <Label layoutX="10.0" layoutY="279.0" text="Phone Number:" textFill="WHITE" />
-      <TextField layoutX="10.0" layoutY="296.0" promptText="Phone Number" styleClass="input-field" stylesheets="@css/addnewrecord.css">
+      <TextField fx:id="txtPhoneNumber" layoutX="10.0" layoutY="296.0" promptText="Phone Number" styleClass="input-field" stylesheets="@css/addnewrecord.css">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
       <Label layoutX="10.0" layoutY="321.0" text="Parent's Name:" textFill="WHITE" />
-      <TextField layoutX="10.0" layoutY="338.0" promptText="Parent's Name" styleClass="input-field" stylesheets="@css/addnewrecord.css">
+      <TextField fx:id="txtParentName" layoutX="10.0" layoutY="338.0" promptText="Parent's Name" styleClass="input-field" stylesheets="@css/addnewrecord.css">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
       <Label layoutX="10.0" layoutY="363.0" text="Occupation:" textFill="WHITE" />
-      <TextField layoutX="10.0" layoutY="380.0" promptText="Occupation" styleClass="input-field" stylesheets="@css/addnewrecord.css">
+      <TextField fx:id="txtOccupation" layoutX="10.0" layoutY="380.0" promptText="Occupation" styleClass="input-field" stylesheets="@css/addnewrecord.css">
          <font>
             <Font size="15.0" />
          </font>
