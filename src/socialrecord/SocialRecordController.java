@@ -1,7 +1,6 @@
 package socialrecord;
 
 import java.io.IOException;
-import static java.lang.System.out;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -208,6 +208,8 @@ public class DashboardController implements Initializable
     }
 
     @FXML
-    private void viewStudents(ActionEvent event) {
+    private void viewStudents(ActionEvent event) 
+    {
+        
     }
 }
